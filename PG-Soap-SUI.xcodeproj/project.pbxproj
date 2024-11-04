@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		631E0F812CD8A10100F696B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 631E0F672CD8A0FE00F696B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 631E0F6E2CD8A0FE00F696B3;
+			remoteInfo = "PG-Soap-SUI";
+		};
+		631E0F8B2CD8A10100F696B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 631E0F672CD8A0FE00F696B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 631E0F6E2CD8A0FE00F696B3;
+			remoteInfo = "PG-Soap-SUI";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		631E0F6F2CD8A0FE00F696B3 /* PG-Soap-SUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PG-Soap-SUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		631E0F802CD8A10100F696B3 /* PG-Soap-SUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PG-Soap-SUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		631E0F8A2CD8A10100F696B3 /* PG-Soap-SUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PG-Soap-SUIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		631E0F712CD8A0FE00F696B3 /* PG-Soap-SUI */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "PG-Soap-SUI";
+			sourceTree = "<group>";
+		};
+		631E0F832CD8A10100F696B3 /* PG-Soap-SUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "PG-Soap-SUITests";
+			sourceTree = "<group>";
+		};
+		631E0F8D2CD8A10100F696B3 /* PG-Soap-SUIUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "PG-Soap-SUIUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		631E0F6C2CD8A0FE00F696B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631E0F7D2CD8A10100F696B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631E0F872CD8A10100F696B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		631E0F662CD8A0FE00F696B3 = {
+			isa = PBXGroup;
+			children = (
+				631E0F712CD8A0FE00F696B3 /* PG-Soap-SUI */,
+				631E0F832CD8A10100F696B3 /* PG-Soap-SUITests */,
+				631E0F8D2CD8A10100F696B3 /* PG-Soap-SUIUITests */,
+				631E0F702CD8A0FE00F696B3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		631E0F702CD8A0FE00F696B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				631E0F6F2CD8A0FE00F696B3 /* PG-Soap-SUI.app */,
+				631E0F802CD8A10100F696B3 /* PG-Soap-SUITests.xctest */,
+				631E0F8A2CD8A10100F696B3 /* PG-Soap-SUIUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		631E0F6E2CD8A0FE00F696B3 /* PG-Soap-SUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 631E0F942CD8A10100F696B3 /* Build configuration list for PBXNativeTarget "PG-Soap-SUI" */;
+			buildPhases = (
+				631E0F6B2CD8A0FE00F696B3 /* Sources */,
+				631E0F6C2CD8A0FE00F696B3 /* Frameworks */,
+				631E0F6D2CD8A0FE00F696B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				631E0F712CD8A0FE00F696B3 /* PG-Soap-SUI */,
+			);
+			name = "PG-Soap-SUI";
+			packageProductDependencies = (
+			);
+			productName = "PG-Soap-SUI";
+			productReference = 631E0F6F2CD8A0FE00F696B3 /* PG-Soap-SUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		631E0F7F2CD8A10100F696B3 /* PG-Soap-SUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 631E0F972CD8A10100F696B3 /* Build configuration list for PBXNativeTarget "PG-Soap-SUITests" */;
+			buildPhases = (
+				631E0F7C2CD8A10100F696B3 /* Sources */,
+				631E0F7D2CD8A10100F696B3 /* Frameworks */,
+				631E0F7E2CD8A10100F696B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				631E0F822CD8A10100F696B3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				631E0F832CD8A10100F696B3 /* PG-Soap-SUITests */,
+			);
+			name = "PG-Soap-SUITests";
+			packageProductDependencies = (
+			);
+			productName = "PG-Soap-SUITests";
+			productReference = 631E0F802CD8A10100F696B3 /* PG-Soap-SUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		631E0F892CD8A10100F696B3 /* PG-Soap-SUIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 631E0F9A2CD8A10100F696B3 /* Build configuration list for PBXNativeTarget "PG-Soap-SUIUITests" */;
+			buildPhases = (
+				631E0F862CD8A10100F696B3 /* Sources */,
+				631E0F872CD8A10100F696B3 /* Frameworks */,
+				631E0F882CD8A10100F696B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				631E0F8C2CD8A10100F696B3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				631E0F8D2CD8A10100F696B3 /* PG-Soap-SUIUITests */,
+			);
+			name = "PG-Soap-SUIUITests";
+			packageProductDependencies = (
+			);
+			productName = "PG-Soap-SUIUITests";
+			productReference = 631E0F8A2CD8A10100F696B3 /* PG-Soap-SUIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		631E0F672CD8A0FE00F696B3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 1610;
+				TargetAttributes = {
+					631E0F6E2CD8A0FE00F696B3 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					631E0F7F2CD8A10100F696B3 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 631E0F6E2CD8A0FE00F696B3;
+					};
+					631E0F892CD8A10100F696B3 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 631E0F6E2CD8A0FE00F696B3;
+					};
+				};
+			};
+			buildConfigurationList = 631E0F6A2CD8A0FE00F696B3 /* Build configuration list for PBXProject "PG-Soap-SUI" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 631E0F662CD8A0FE00F696B3;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 631E0F702CD8A0FE00F696B3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				631E0F6E2CD8A0FE00F696B3 /* PG-Soap-SUI */,
+				631E0F7F2CD8A10100F696B3 /* PG-Soap-SUITests */,
+				631E0F892CD8A10100F696B3 /* PG-Soap-SUIUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		631E0F6D2CD8A0FE00F696B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631E0F7E2CD8A10100F696B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631E0F882CD8A10100F696B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		631E0F6B2CD8A0FE00F696B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631E0F7C2CD8A10100F696B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		631E0F862CD8A10100F696B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		631E0F822CD8A10100F696B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 631E0F6E2CD8A0FE00F696B3 /* PG-Soap-SUI */;
+			targetProxy = 631E0F812CD8A10100F696B3 /* PBXContainerItemProxy */;
+		};
+		631E0F8C2CD8A10100F696B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 631E0F6E2CD8A0FE00F696B3 /* PG-Soap-SUI */;
+			targetProxy = 631E0F8B2CD8A10100F696B3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		631E0F922CD8A10100F696B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		631E0F932CD8A10100F696B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		631E0F952CD8A10100F696B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "PG-Soap-SUI/PG_Soap_SUI.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PG-Soap-SUI/Preview Content\"";
+				DEVELOPMENT_TEAM = QN5HSPB5H4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KPRC.PG-Soap-SUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		631E0F962CD8A10100F696B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "PG-Soap-SUI/PG_Soap_SUI.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PG-Soap-SUI/Preview Content\"";
+				DEVELOPMENT_TEAM = QN5HSPB5H4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KPRC.PG-Soap-SUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		631E0F982CD8A10100F696B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QN5HSPB5H4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KPRC.PG-Soap-SUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PG-Soap-SUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PG-Soap-SUI";
+			};
+			name = Debug;
+		};
+		631E0F992CD8A10100F696B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QN5HSPB5H4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KPRC.PG-Soap-SUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PG-Soap-SUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PG-Soap-SUI";
+			};
+			name = Release;
+		};
+		631E0F9B2CD8A10100F696B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QN5HSPB5H4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KPRC.PG-Soap-SUIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "PG-Soap-SUI";
+			};
+			name = Debug;
+		};
+		631E0F9C2CD8A10100F696B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QN5HSPB5H4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.KPRC.PG-Soap-SUIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "PG-Soap-SUI";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		631E0F6A2CD8A0FE00F696B3 /* Build configuration list for PBXProject "PG-Soap-SUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				631E0F922CD8A10100F696B3 /* Debug */,
+				631E0F932CD8A10100F696B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		631E0F942CD8A10100F696B3 /* Build configuration list for PBXNativeTarget "PG-Soap-SUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				631E0F952CD8A10100F696B3 /* Debug */,
+				631E0F962CD8A10100F696B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		631E0F972CD8A10100F696B3 /* Build configuration list for PBXNativeTarget "PG-Soap-SUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				631E0F982CD8A10100F696B3 /* Debug */,
+				631E0F992CD8A10100F696B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		631E0F9A2CD8A10100F696B3 /* Build configuration list for PBXNativeTarget "PG-Soap-SUIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				631E0F9B2CD8A10100F696B3 /* Debug */,
+				631E0F9C2CD8A10100F696B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 631E0F672CD8A0FE00F696B3 /* Project object */;
+}

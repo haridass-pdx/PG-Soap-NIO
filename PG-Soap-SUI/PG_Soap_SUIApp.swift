@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct PG_Soap_SUIApp: App {
+    let theConnection = globalRecords()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(theConnection)
         }
     }
 }

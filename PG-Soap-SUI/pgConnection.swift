@@ -8,6 +8,25 @@
 import Foundation
 import PostgresClientKit
 
+func getNewConnection()->Connection?{
+    var theConnection: Connection?
+    do{
+        var configuration = PostgresClientKit.ConnectionConfiguration()
+        configuration.host = "127.0.0.1"
+        configuration.database = "soap_new"
+        configuration.user = "haridass"
+        configuration.ssl = false
+        configuration.credential =  .scramSHA256(password: "3108")
+        
+        theConnection = try PostgresClientKit.Connection(configuration: configuration)
+        // defer { theConnection!.close() }
+    } catch {
+        print(error) // better error handling goes here
+    }
+    return theConnection
+    
+}
+
 class globalRecords: ObservableObject{
     
     @Published var theConnection: Connection?
@@ -18,7 +37,7 @@ class globalRecords: ObservableObject{
         do {
             var configuration = PostgresClientKit.ConnectionConfiguration()
             configuration.host = "127.0.0.1"
-            configuration.database = "pg_exp"
+            configuration.database = "soap_new"
             configuration.user = "haridass"
             configuration.ssl = false
             configuration.credential =  .scramSHA256(password: "3108")

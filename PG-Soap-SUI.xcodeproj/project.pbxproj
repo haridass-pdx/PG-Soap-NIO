@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		631E0FC32CD8A2E400F696B3 /* PostgresClientKit in Frameworks */ = {isa = PBXBuildFile; productRef = 631E0FC22CD8A2E400F696B3 /* PostgresClientKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		631E0F812CD8A10100F696B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				631E0FC32CD8A2E400F696B3 /* PostgresClientKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = "PG-Soap-SUI";
 			packageProductDependencies = (
+				631E0FC22CD8A2E400F696B3 /* PostgresClientKit */,
 			);
 			productName = "PG-Soap-SUI";
 			productReference = 631E0F6F2CD8A0FE00F696B3 /* PG-Soap-SUI.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = 631E0F662CD8A0FE00F696B3;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				631E0FC12CD8A2E400F696B3 /* XCRemoteSwiftPackageReference "PostgresClientKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 631E0F702CD8A0FE00F696B3 /* Products */;
 			projectDirPath = "";
@@ -401,6 +410,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -428,6 +438,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -549,6 +560,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		631E0FC12CD8A2E400F696B3 /* XCRemoteSwiftPackageReference "PostgresClientKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/codewinsdotcom/PostgresClientKit";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		631E0FC22CD8A2E400F696B3 /* PostgresClientKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 631E0FC12CD8A2E400F696B3 /* XCRemoteSwiftPackageReference "PostgresClientKit" */;
+			productName = PostgresClientKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 631E0F672CD8A0FE00F696B3 /* Project object */;
 }

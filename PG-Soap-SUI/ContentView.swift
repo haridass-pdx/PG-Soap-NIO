@@ -68,7 +68,7 @@ func getRelSoap(NameID: String)->[soap_rec]{
     if((NameID != "") && (connection != nil)){
         do {
             
-            let text = "SELECT soap_date  FROM soap_tbl WHERE nameid = \(NameID) order by soap_date;"
+            let text = "SELECT soap_date, soapid  FROM soap_tbl WHERE nameid = \(NameID) order by soap_date;"
             
             let statement = try connection!.prepareStatement(text: text)
             
@@ -76,7 +76,7 @@ func getRelSoap(NameID: String)->[soap_rec]{
             defer { cursor.close() }
             for row in cursor {
                 let columns = try row.get().columns
-                let spRec = soap_rec(spDate: try columns[0].string())
+                let spRec = soap_rec(spDate: try columns[0].string(), spID : try columns[1].string())
                 soapArr.append(spRec)
             }
             
@@ -114,15 +114,11 @@ struct ContentView: View {
     @State private var sortOrder = [KeyPathComparator(\pd_rec.lastname)]
     @State private var spselection: soap_rec.ID?
     @State private var spsortOrder = [KeyPathComparator(\soap_rec.spDate)]
+    var theRecIDS: RecIDS
     
     var body: some View {
                 VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Spacer()
-            Text("Hello, world!")
-            Spacer()
+                Spacer()
             //  Button("Perform Intent", intent: PatientIntent())
             HStack{
                 Table(ptArr, selection: $selection,  sortOrder: $sortOrder) {
@@ -138,22 +134,31 @@ struct ContentView: View {
                 .onChange(of: sortOrder) { newOrder in
                     ptArr.sort(using: newOrder)
                 }
-                .onChange(of: selection, perform: { selected in
+                .onChange(of: selection) { selected in
                     // called each time on table selection changes
                     
                     let item = ptArr.first(where: { $0.id == selected })
                     spArr = getRelSoap(NameID: item?.ptseqnum ?? "")
                     print("Selected id : ", selected!)
                     print("Selected item : ", item as Any)
-                })
+                }
                 
                 Spacer()
                 Text("Soap ->")
                 Spacer()
                 Table(spArr, selection: $spselection,  sortOrder: $spsortOrder) {
-                    TableColumn("Date", value: \.spDate )
+                    TableColumn("Date"){ soap in
+                        Text(soap.spDate)
+                            .gesture(TapGesture(count: 2).onEnded{
+                                print("double click")
+                            })
+                    }
                 }
-                
+                .onChange(of: spselection) { selected in
+                    let spitem = spArr.first(where: { $0.id == selected })
+                    let ItemTemp = spitem?.spID
+                    theRecIDS.SoapID = spitem?.spID ?? ""
+                }
                 Spacer()
                 
                 
@@ -164,6 +169,6 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
+/*#Preview {
+    ContentView( soapID: <#Binding<String?>#>)
+}*/

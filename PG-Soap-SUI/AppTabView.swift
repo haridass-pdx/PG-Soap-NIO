@@ -8,8 +8,30 @@
 import SwiftUI
 
 struct AppTabView: View {
+    @EnvironmentObject var theConnection: globalRecords
+    @State private var selectedTab = "Names"
+    @State private var theRecIDS = RecIDS()
+
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Spacer()
+        TabView(selection: $selectedTab) {
+            ContentView(theRecIDS: theRecIDS).environmentObject(theConnection)
+                .tabItem {
+                    Label("Names", systemImage: "star")
+                }
+
+            SoapView(SoapID: theRecIDS.SoapID)
+                .tabItem  {
+                    Label("SOAP", systemImage: "circle")
+                } //.disabled(theRecIDS.SoapID == "")
+                
+            ExamView(ExamID: theRecIDS.ExamID)
+            //Text("Exam Tab")
+                .tabItem {
+                    Label("Exam", systemImage: "circle")
+                }
+        }
     }
 }
 

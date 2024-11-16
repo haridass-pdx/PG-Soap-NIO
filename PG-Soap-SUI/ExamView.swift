@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ExamView: View {
+    var ExamID: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Exam View! \(ExamID)")
     }
 }
 
-#Preview {
+/*#Preview {
     ExamView()
-}
+}*/

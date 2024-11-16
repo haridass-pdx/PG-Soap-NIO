@@ -9,6 +9,14 @@ import Foundation
 import SwiftUI
 import PostgresClientKit
 
+@Observable
+class RecIDS {
+    var NameID = ""
+    var SoapID = ""
+    var ExamID = ""
+}
+
+
 struct pd_rec : Identifiable {
     let id = UUID()
     var  ptseqnum: String
@@ -90,14 +98,15 @@ struct patient_data : Identifiable {
 struct soap_rec : Identifiable {
     let id = UUID()
     var spDate : String
+    var spID : String
 }
 
 
 struct  soap_tbl  : Identifiable {
-    var   id: ObjectIdentifier // soapID
-    var    nameid :  Int
+    let   id  = UUID() // soapID
+    var    nameid :  String
     var    name :  String
-    var    soap_date:  Date
+    var    soap_date:  String
     var    sev_1 :  String
     var    sev_2 :  String
     var    sev_3 :  String
@@ -167,20 +176,119 @@ struct  soap_tbl  : Identifiable {
     var    pad3 :  String
     var    anotes :  String
     var    hx :  String
-    var    sid :  Int
-    var    oid :  Int
-    var    aid :  Int
-    var    pid :  Int
+    var    sid :  String
+    var    oid :  String
+    var    aid :  String
+    var    pid :  String
     var    snotes :  String
     var    onotes :  String
     var    pnotes :  String
+    var    soapid: String
     var    claim_num :  String
     var    dr_code :  String
-    var    claim_id :  Int
-    var    newSoapRec: Bool
-    var    jointData: Data
-    var    mslData: Data
-    var    procedures: Data
-    var    exercises: Data
-    var    supplements: Data
+    var    claim_id :  String
+    var    newSoapRec: String
+    var  jointData: Data
+    var  mslData:  Data
+    var  procedures: Data
+    var  exercises: Data
+    var  supplements: Data
+    
+        
+  
 }
+
+func emptySoap()->soap_tbl{
+    
+    let retRec = soap_tbl( nameid :  "",
+                           name :  "",
+                           soap_date:  "",
+                           sev_1 :  "",
+                           sev_2 :  "",
+                           sev_3 :  "",
+                           sev_4 :  "",
+                           sev_5 :  "",
+                           s1_freq :  "",
+                           s2_freq :  "",
+                           s3_freq :  "",
+                           s4_freq :  "",
+                           s5_freq :  "",
+                           sympt1 :  "",
+                           sympt2 :  "",
+                           sympt3 :  "",
+                           sympt4 :  "",
+                           sympt5 :  "",
+                           sp_tend_1 :  "",
+                           sp_tend_2 :  "",
+                           sp_tend_3 :  "",
+                           sp1_grade :  "",
+                           sp2_grade :  "",
+                           sp3_grade :  "",
+                           spd_1 :  "",
+                           spd_2 :  "",
+                           spd_3 :  "",
+                           sppos_1 :  "",
+                           sppos_2 :  "",
+                           sppos_3 :  "",
+                           mt1 :  "",
+                           mt2 :  "",
+                           mt3 :  "",
+                           mt1_grade :  "",
+                           mt2_grade :  "",
+                           mt3_grade :  "",
+                           tp_1 :  "",
+                           tp_2 :  "",
+                           tp1_grade :  "",
+                           tp2_grade :  "",
+                           inc_rom :  "",
+                           dec_rom :  "",
+                           cur_prog :  "",
+                           pt_prog :  "",
+                           tx_stage :  "",
+                           dx1 :  "",
+                           dx2 :  "",
+                           dx3 :  "",
+                           dx4 :  "",
+                           dx5 :  "",
+                           adj_type :  "",
+                           adj_loc :  "",
+                           adj_mvt :  "",
+                           pt1 :  "",
+                           pt2 :  "",
+                           pt3 :  "",
+                           pt1_loc :  "",
+                           pt2_loc :  "",
+                           pt3_loc :  "",
+                           pt1_goal :  "",
+                           pt2_goal :  "",
+                           pt3_goal :  "",
+                           supports :  "",
+                           exercs :  "",
+                           instructs :  "",
+                           vis_per_wk :  "",
+                           vis_duraddl :  "",
+                           pad1 :  "",
+                           pad2 :  "",
+                           pad3 :  "",
+                           anotes :  "",
+                           hx :  "",
+                           sid :  "",
+                           oid :  "",
+                           aid :  "",
+                           pid :  "",
+                           snotes :  "",
+                           onotes :  "",
+                           pnotes :  "",
+                           soapid: "",
+                           claim_num :  "",
+                           dr_code :  "",
+                           claim_id :  "",
+                           newSoapRec: "",
+                           jointData: Data(),
+                           mslData:  Data(),
+                           procedures: Data(),
+                           exercises: Data(),
+                           supplements: Data())
+    return retRec
+}
+

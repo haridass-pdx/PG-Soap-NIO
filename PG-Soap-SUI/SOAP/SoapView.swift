@@ -12,14 +12,25 @@ import Foundation
 func getColData(columns: [PostgresValue], item: inout Int)->Data{
     var retString = ""
     var retData: Data
-    
+    var val: String
     let theCol = columns[item]
     item+=1
     if(theCol.rawValue != nil)
     {
-        let val = theCol.rawValue!
+      //  let pgVal = getPGData(theCol:theCol )
+         val = theCol.rawValue!
+        
+        
+        
+        if( val.hasPrefix("\\x"))  {
+            
+            
+            val = String(
+                val[val.index(val.startIndex, offsetBy: "\\x".count)...])
+        }
         let theSize = val.count
-        retData = Data(bytes:  val, count: theSize)
+        let cval = val.cString(using: String.Encoding.ascii) //// (rawValue: ascii) ?? ascii)
+        retData = val.data(using : String.Encoding.ascii)  ?? Data()   ////////////////, allowLossyConversion: Bool = false)   //Data(bytes:  val, count: theSize)
     }
     else{
         retData = Data(bytes:  retString, count: retString.count)
@@ -27,6 +38,73 @@ func getColData(columns: [PostgresValue], item: inout Int)->Data{
 
    return retData
 }
+
+func getPGData(theCol: PostgresValue)->PostgresByteA?
+{
+    var retVal: PostgresByteA?
+    do{
+        let retVal = try theCol.byteA()
+        
+    }
+    catch{
+        print(error)
+    }
+    
+    return retVal
+}
+
+func unArchiveData(theData : Data, theKey: String) // ->[]
+{
+    var savedArray = [String]()
+    var i = 0
+    
+    do {
+        //NSError theError
+     /*  for dp in theData{
+            print("\(i) - \(dp)")
+            i+=1
+        }*/
+        //     theDataBuffer = PQunescapeBytea([theData cStringUsingEncoding: NSASCIIStringEncoding] , &to_length);
+        
+        let unArchive = try NSKeyedUnarchiver(forReadingFrom: theData)
+       /* if let loadedStrings =  unArchive.decodeObject(forKey: theKey) as? [String] {
+            savedArray = loadedStrings
+        }*/
+    } catch {
+        print(error)
+    }
+
+   // return result;
+}
+ 
+/*
+ -(NSMutableArray *)unArchieveData:(NSData *)theData
+                            forKey:(NSString *)theKey{
+     NSKeyedArchiver *unarchiver;
+     id                result = nil;
+     size_t to_length;
+     char *theDataBuffer = nil;
+     
+     if([theData isKindOfClass: [NSString class]]){
+         theDataBuffer = PQunescapeBytea([theData cStringUsingEncoding: NSASCIIStringEncoding] , &to_length);
+         theData = [NSData dataWithBytes: theDataBuffer
+                                  length: to_length];
+         PQfreemem(theDataBuffer);
+     }
+     
+     if([theData length]){
+         unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData: theData];
+         // Customize unarchiver here
+         result = [unarchiver decodeObjectForKey: theKey];
+         [unarchiver finishDecoding];
+         [unarchiver release];
+         
+         
+         
+     }
+     return result;
+ }
+ */
 
 func getColItem(columns: [PostgresValue], item: inout Int)->String{
     
@@ -161,8 +239,11 @@ func getSoapRec(SoapID: String)->soap_tbl{
     } catch {
         print(error) // better error handling goes here
     }
-    
-    
+     
+    let jtData = soapRec?.jointData
+    if(jtData != nil){
+        unArchiveData(theData : jtData!, theKey: keyItem.jointFldKey)
+    }
     
     return soapRec!
 }
@@ -172,7 +253,8 @@ struct SoapView: View {
     var body: some View {
          // Text("Soap View \(SoapID)")
         let soapRec = getSoapRec(SoapID: SoapID)
-      TabView {
+        
+              TabView {
             //Text("Subj")
         
           SubjView(SoapRec: soapRec)

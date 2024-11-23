@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 import SwiftUI
 import PostgresClientKit
 
@@ -15,6 +16,31 @@ class RecIDS {
     var SoapID = ""
     var ExamID = ""
 }
+
+struct theKeys{
+    let spinalDataKey =     "SpinalFindings"
+    let mslDataKey = "SoftTissueFindings"
+    let  proceduresDataKey = "TrxProcedures"
+    let  exerciseDataKey = "Exercises"
+    let  supplementDataKey = "Supplements"
+    let  jointFldKey = "jointData"
+    let  newSoapFldKey = "newSoapRec"
+    let  mslFldKey = "mslData"
+}
+
+let keyItem = theKeys()
+
+struct spinalFindings {
+    var theArea: String
+    var theSide: String
+    var intensity: String
+    var theNote: String
+    var fixation: Bool
+    var swelling: Bool
+    var muscleTension: Bool
+    var palpatoryTenderness: Bool
+}
+
 
 
 struct pd_rec : Identifiable {

@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
-import PostgresClientKit
+//import PostgresClientKit
 import Foundation
+// import libpq
 
+//#include <libpq-fe.h>
+/*
 func getColData(columns: [PostgresValue], item: inout Int)->Data{
     var retString = ""
     var retData: Data
     var val: String
+    var to_length : size_t
     let theCol = columns[item]
     item+=1
     if(theCol.rawValue != nil)
@@ -20,8 +24,8 @@ func getColData(columns: [PostgresValue], item: inout Int)->Data{
       //  let pgVal = getPGData(theCol:theCol )
          val = theCol.rawValue!
         
-        
-        
+        let cval = val.cString(using: String.Encoding.ascii)
+     //   theDataBuffer = PQunescapeBytea(cval , &to_length)
         if( val.hasPrefix("\\x"))  {
             
             
@@ -29,7 +33,7 @@ func getColData(columns: [PostgresValue], item: inout Int)->Data{
                 val[val.index(val.startIndex, offsetBy: "\\x".count)...])
         }
         let theSize = val.count
-        let cval = val.cString(using: String.Encoding.ascii) //// (rawValue: ascii) ?? ascii)
+     //   let cval = val.cString(using: String.Encoding.ascii) //// (rawValue: ascii) ?? ascii)
         retData = val.data(using : String.Encoding.ascii)  ?? Data()   ////////////////, allowLossyConversion: Bool = false)   //Data(bytes:  val, count: theSize)
     }
     else{
@@ -76,6 +80,7 @@ func unArchiveData(theData : Data, theKey: String) // ->[]
 
    // return result;
 }
+ */
  
 /*
  -(NSMutableArray *)unArchieveData:(NSData *)theData
@@ -106,6 +111,7 @@ func unArchiveData(theData : Data, theKey: String) // ->[]
  }
  */
 
+/*
 func getColItem(columns: [PostgresValue], item: inout Int)->String{
     
     var retString = ""
@@ -285,6 +291,7 @@ struct SoapView: View {
 
             }
 }
+ */
 
 /*#Preview {
     SoapView()

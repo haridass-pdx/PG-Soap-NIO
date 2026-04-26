@@ -6,14 +6,14 @@
 //
 
 import SwiftUI
-
+/*
 struct AsessView: View {
     var SoapRec: soap_tbl
     var body: some View {
         Text("Assess!")
     }
 }
-
+*/
 /*#Preview {
     AsessView()
 }*/

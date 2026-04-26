@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
-
+/*
 struct PlanView: View {
     var SoapRec: soap_tbl
     var body: some View {
         Text("Plan!")
     }
 }
+ */
 /*
 #Preview {
     PlanView()

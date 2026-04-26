@@ -8,7 +8,7 @@
 import Foundation
 
 import SwiftUI
-import PostgresClientKit
+/* import PostgresClientKit
 
 @Observable
 class RecIDS {
@@ -317,4 +317,4 @@ func emptySoap()->soap_tbl{
                            supplements: Data())
     return retRec
 }
-
+*/

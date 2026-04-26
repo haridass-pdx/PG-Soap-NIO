@@ -7,7 +7,7 @@
 
 import SwiftUI
 import AppIntents
-import PostgresClientKit
+//import PostgresClientKit
 import Foundation
 
 
@@ -29,6 +29,7 @@ func pgDateFormatter()->DateFormatter{
     return formatter1
 }
 
+/*
 func convertPGDate(dateStr: String)->Date?{
     // var theDate = Date()
     
@@ -39,3 +40,4 @@ func convertPGDate(dateStr: String)->Date?{
     
     return theDate
 }
+*/

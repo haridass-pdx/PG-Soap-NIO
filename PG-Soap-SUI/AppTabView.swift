@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+/*
 struct AppTabView: View {
     @EnvironmentObject var theConnection: globalRecords
     @State private var selectedTab = "Names"
@@ -38,3 +38,22 @@ struct AppTabView: View {
 #Preview {
     AppTabView()
 }
+
+struct SrchContentView: View {
+    @EnvironmentObject var theConnection: globalRecords
+    // @State private var theRecIDS = RecIDS()
+    @State
+    private var searchText : String = ""
+  //  @ObservedObject var itIsSecure: secure
+    
+    var body: some View {
+        // NavigationView {
+        //ContentView()
+       // Text("Search View")
+        AppTabView().environmentObject(theConnection)
+        //}
+            .navigationTitle("Patients")
+            .searchable(text: $searchText)
+    }
+}
+*/

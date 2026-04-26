@@ -115,6 +115,7 @@ struct LogInIView: View {
                         }
                     }
                 }
+                .keyboardShortcut(.defaultAction)
                 .alert("Important message", isPresented: $showAlert) {
                     // Actions (Buttons) can be added here.
                     Button("OK", role: .cancel) {

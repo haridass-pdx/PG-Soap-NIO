@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CheckLoginView: View {
     @EnvironmentObject var globalData: globalDataRec
-    @State var authenticated: Bool = false
+    @State var authenticated: Bool = true ///false
     
     var body: some View {
         if(authenticated == false){

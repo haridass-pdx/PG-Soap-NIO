@@ -415,7 +415,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PG-Soap-SUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"/Users/haridass/Active xCode Projects/PG-Soap-NIO/PG-Soap-SUI/Assets.xcassets\"";
 				DEVELOPMENT_TEAM = QN5HSPB5H4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -430,7 +430,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.KPRC.PG-Soap-SUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -447,7 +447,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PG-Soap-SUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"/Users/haridass/Active xCode Projects/PG-Soap-NIO/PG-Soap-SUI/Assets.xcassets\"";
 				DEVELOPMENT_TEAM = QN5HSPB5H4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -462,7 +462,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.KPRC.PG-Soap-SUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

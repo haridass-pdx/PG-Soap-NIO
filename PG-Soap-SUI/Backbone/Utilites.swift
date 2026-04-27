@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-
+import AppIntents
 
 enum timeSearchType: String, CaseIterable{
     case this = "This Period"
@@ -536,3 +536,22 @@ func numberToWords(_ number: Double) -> String {
         return false
     })
 }
+
+public func removeTimeStamp(fromDate: Date) -> Date {
+    guard let date = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month, .day], from: fromDate)) else {
+        fatalError("Failed to strip time from Date object")
+    }
+    return date
+}
+
+func pgDateFormatter()->DateFormatter{
+    
+    let formatter1 = DateFormatter()
+    formatter1.dateFormat = "MM-dd-yyyy"
+    
+    formatter1.dateStyle = .short
+    formatter1.timeStyle = .none
+    
+    return formatter1
+}
+

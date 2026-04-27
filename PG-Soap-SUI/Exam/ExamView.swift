@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ExamView: View {
-    var ExamID: String
+    @Binding var patientID: Int?
+   var ExamID: String = "01"
     var body: some View {
-        Text("Exam View! \(ExamID)")
+        Text("Exam View! \(patientID ??  0)")
     }
 }
 

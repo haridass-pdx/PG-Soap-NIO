@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct PatientEdit: View {
+    @Binding var patientID: Int?
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("PatientEdit (ID: \(patientID ?? 0) )")
     }
 }
 
 #Preview {
-    PatientEdit()
+   // PatientEdit()
 }

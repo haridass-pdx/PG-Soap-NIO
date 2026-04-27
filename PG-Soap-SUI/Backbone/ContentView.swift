@@ -47,11 +47,15 @@ struct ContentView: View {
                         // Use key path for simple String properties
                         
                     }
+                    .onChange(of: selectedPt) { newSelection in
+                        if let selectedId = newSelection {
+
+
+                        }
+                    }
                 }
                 .navigationTitle("Patient List")
                 .searchable(text: $searchText, prompt: "Search patient last name...")
-                
-                
                 .onAppear{
                     Task{
                         let ptc = patientClass()
@@ -61,7 +65,7 @@ struct ContentView: View {
             }
         }
         detail: {
-            Text("Detail VIew")
+            DetailTabView(patientID: $selectedPt)
         }
     }
 }

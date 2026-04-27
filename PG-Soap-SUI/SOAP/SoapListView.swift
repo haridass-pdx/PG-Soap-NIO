@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct SoapListView: View {
+    @Binding var patientID: Int?
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("SoapListView \(patientID ?? 0)")
     }
 }
 
 #Preview {
-    SoapListView()
+    //SoapListView()
 }

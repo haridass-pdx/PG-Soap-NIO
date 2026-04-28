@@ -31,7 +31,7 @@ struct DetailTabView: View {
                 .tag(2)
             
             NavigationStack {
-                ExamView(patientID: $patientID)
+                ExamListView(patientID: $patientID)
             }
                 .tabItem{
                     Label("Exam", systemImage: "gear.circle.fill")

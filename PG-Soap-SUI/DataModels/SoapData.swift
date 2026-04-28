@@ -8,11 +8,11 @@
 import Foundation
 import PostgresNIO
 
-struct  soap_tbl  : Identifiable, Equatable, Hashable {
+struct  SoapData  : Identifiable, Equatable, Hashable {
     var   id  = 0  // soapID
     var    nameid :  Int = 0
     var    name :  String = ""
-    var    soap_date:  String = ""
+    var    soap_date:  Date?
     var    sev_1 :  String = ""
     var    sev_2 :  String = ""
     var    sev_3 :  String = ""
@@ -117,7 +117,7 @@ struct  soap_tbl  : Identifiable, Equatable, Hashable {
         dataDict = row
     }
     
-    static func == (lhs: soap_tbl, rhs: soap_tbl) -> Bool {
+    static func == (lhs: SoapData, rhs: SoapData) -> Bool {
         return
         lhs.id  == rhs.id  &&
         lhs.nameid == rhs.nameid &&
@@ -217,10 +217,11 @@ struct  soap_tbl  : Identifiable, Equatable, Hashable {
 
     mutating    func recToDict(){
         var localDict:DictListType = self.dataDict
-        localDict["soap_id"]?.strVal = String(self.id)
+        localDict["soapid"]?.strVal = String(self.id)
         localDict["nameid"]?.strVal = String(self.nameid)
         localDict["name"]?.strVal = String(self.name)
-        localDict["soap_date"]?.strVal = String(self.soap_date)
+        localDict["soap_date"]?.strVal = getDateOptString(from: self.soap_date,
+                                                          formatStr: "yyyy-MM-dd")
         localDict["sev_1"]?.strVal = String(self.sev_1)
         localDict["sev_2"]?.strVal = String(self.sev_2)
         localDict["sev_3"]?.strVal = String(self.sev_3)
@@ -313,15 +314,21 @@ struct  soap_tbl  : Identifiable, Equatable, Hashable {
 
     }
     
-    mutating  func dictToRec(){
+    mutating func dictToRec(dict: DictListType)
+    {
+        dataDict = dict
+        readDictValues()
+    }
+    
+    mutating  func readDictValues(){
       //  let empID = getString(key: "employee_id"]?.strVal ?? "0"
       //
-        self.id = getInt(key: "soap_id")
+        self.id = getInt(key: "soapid")
         self.nameid = getInt(key:"nameid")
         
         self.name = getString(key: "name") 
-        self.soap_date = getString(key: "soap_date:") 
-        self.sev_1 = getString(key: "sev_1") 
+        self.soap_date = getDate(key: "soap_date")
+        self.sev_1 = getString(key: "sev_1")
         self.sev_2 = getString(key: "sev_2") 
         self.sev_3 = getString(key: "sev_3") 
         self.sev_4 = getString(key: "sev_4") 
@@ -446,6 +453,15 @@ struct  soap_tbl  : Identifiable, Equatable, Hashable {
         Result = Data(str.utf8)
         return Result
     }
+    
+    func getDate(key:    String)->Date?{
+        var result: Date? = nil
+        let str = dataDict[key]?.strVal ?? ""
+        
+        result = StringToDate(dateString: str)
+        return result
+    }
+
 }
 
 
@@ -455,6 +471,24 @@ public class soapClass: pgClientClass{
         super.init(doAlert: doAlert,
                    tName: "soap_tbl",
                    pkField: "id")
+    }
+    
+    func buildSoapist(patientID:  Int) async -> [SoapData]{
+        var text: String = ""
+        var result: [SoapData] = []
+        
+        
+            text = "SELECT * FROM public.soap_tbl  WHERE nameid = \(patientID)   ORDER BY soap_date ASC ;"
+        
+        await executeQuery(text: text)
+        var theSoapRec = SoapData()
+
+        for soapRec in dictList{
+            theSoapRec.dictToRec(dict: soapRec)
+            result.append(theSoapRec)
+        }
+        
+        return result
     }
     
 

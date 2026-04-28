@@ -10,23 +10,25 @@ import SwiftUI
 struct ContentView: View {
     //  @State  var dbManager = DatabaseManager()
     //   @State  var sqlQuery = "SELECT tablename FROM pg_tables WHERE schemaname = 'public' LIMIT 20;"
-    @State var patientList: [PatientData] = []
+    @State var nameList: [NameData] = []
     @State private var selectedPt: Int?
     @State private var searchText = ""
     @State private var columnVisibility = NavigationSplitViewVisibility.all // or .doubleColumn
+    @EnvironmentObject var globalData: globalDataRec
+ 
     
-    var filteredNames: [PatientData] {
+    var filteredNames: [NameData] {
         if searchText.isEmpty {
-            return patientList
+            return nameList
         } else {
-            return patientList.filter { $0.lastname.localizedCaseInsensitiveContains(searchText) }
+            return nameList.filter { $0.lastname.localizedCaseInsensitiveContains(searchText) }
         }
     }
     
     var body: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
             VStack(spacing: 16) {
-                Text("Patient List")
+                Text("Name List")
                 NavigationStack {
                     HStack{
                         Text("Last Name: ")
@@ -36,8 +38,8 @@ struct ContentView: View {
                     Text("Count: \(filteredNames.count)")
                     Table(filteredNames, selection: $selectedPt) {
                         // 4. Define columns
-                        TableColumn("ID") { patient in
-                            Text(String(patient.id))
+                        TableColumn("ID") { person in
+                            Text(String(person.id))
                         }
                         .width(min: 25, ideal: 30, max: 100)
                         
@@ -47,6 +49,7 @@ struct ContentView: View {
                         // Use key path for simple String properties
                         
                     }
+                    .disabled(globalData.recordEditFlag)
                     .onChange(of: selectedPt) { newSelection in
                         if let selectedId = newSelection {
 
@@ -54,12 +57,12 @@ struct ContentView: View {
                         }
                     }
                 }
-                .navigationTitle("Patient List")
-                .searchable(text: $searchText, prompt: "Search patient last name...")
+                .navigationTitle("Name List")
+                .searchable(text: $searchText, prompt: "Search name last name...")
                 .onAppear{
                     Task{
-                        let ptc = patientClass()
-                        await patientList = ptc.buildPatientList(showAll: true)
+                        let ptc = nameClass()
+                        await nameList = ptc.buildNameList(showAll: true)
                     }
                 }
             }

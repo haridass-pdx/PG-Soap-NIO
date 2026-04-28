@@ -12,6 +12,7 @@ class globalDataRec: ObservableObject{
     @Published var theData: [String:Any] = [:]
     @Published var loggedIn: Bool = false
     @Published   var loggedInRec = logInRec()
+    @Published var recordEditFlag: Bool = false
    }
 
 class AlertManager: ObservableObject {

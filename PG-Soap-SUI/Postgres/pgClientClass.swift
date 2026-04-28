@@ -95,11 +95,11 @@ class ColumnMetadataCache {
     private init() {}
     
     func loadAll() async {
-        let tables = ["patient_data", "soap_tbl"]
+        let tables = ["patient_data", "soap_tbl", "exam_tbl", "ins_co_info", "claim_tbl", "name_tbl", "soap_rpt_tbl", "transaction_tbl", "tr_detail_tbl"]
         for table in tables {
             await loadTable(name: table)
         }
-    }
+    }       
     
     func loadTable(name: String) async {
         let sql = """

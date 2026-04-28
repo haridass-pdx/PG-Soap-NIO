@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExamView: View {
+    @EnvironmentObject var globalData: globalDataRec
     @Binding var patientID: Int?
    var ExamID: String = "01"
     var body: some View {

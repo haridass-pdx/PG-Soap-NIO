@@ -29,46 +29,40 @@ struct ContentView: View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
             VStack(spacing: 16) {
                 Text("Name List")
-                NavigationStack {
-                    HStack{
-                        Text("Last Name: ")
-                        TextField("Last Name:", text: $searchText)
-                    }
-                    .frame(width: 250)
-                    Text("Count: \(filteredNames.count)")
-                    Table(filteredNames, selection: $selectedPt) {
-                        // 4. Define columns
-                        TableColumn("ID") { person in
-                            Text(String(person.id))
-                        }
-                        .width(min: 25, ideal: 30, max: 100)
-                        
-                        TableColumn("Last", value: \.lastname)
-                            .width(min: 50, ideal: 50, max: 100)
-                        TableColumn("First", value: \.firstname) //         .width(min: 50, ideal: 50, max: 100)
-                        // Use key path for simple String properties
-                        
-                    }
-                    .disabled(globalData.recordEditFlag)
-                    .onChange(of: selectedPt) { newSelection in
-                        if let selectedId = newSelection {
-
-
-                        }
-                    }
+                HStack{
+                    Text("Last Name: ")
+                    TextField("Last Name:", text: $searchText)
                 }
-                .navigationTitle("Name List")
-                .searchable(text: $searchText, prompt: "Search name last name...")
-                .onAppear{
-                    Task{
-                        let ptc = nameClass()
-                        await nameList = ptc.buildNameList(showAll: true)
+                .frame(width: 250)
+                Text("Count: \(filteredNames.count)")
+                Table(filteredNames, selection: $selectedPt) {
+                    TableColumn("ID") { person in
+                        Text(String(person.id))
                     }
+                    .width(min: 25, ideal: 30, max: 100)
+                    
+                    TableColumn("Last", value: \.lastname)
+                        .width(min: 50, ideal: 50, max: 100)
+                    TableColumn("First", value: \.firstname)
+                    
+                }
+                .disabled(globalData.recordEditFlag)
+                .onChange(of: selectedPt) {
+                }
+            }
+            .navigationTitle("Name List")
+            .searchable(text: $searchText, prompt: "Search name last name...")
+            .onAppear{
+                Task{
+                    let ptc = nameClass()
+                    await nameList = ptc.buildNameList(showAll: true)
                 }
             }
         }
         detail: {
-            DetailTabView(nameID: $selectedPt)
+           NavigationStack{
+                DetailTabView(nameID: $selectedPt)
+            }
         }
     }
 }

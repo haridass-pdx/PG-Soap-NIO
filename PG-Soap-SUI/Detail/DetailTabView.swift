@@ -15,10 +15,10 @@ struct DetailTabView: View {
         TabView(selection: $selectedTab)
         {
             NavigationStack {
-                PatientEdit(patientID: $nameID)
+                NameEdit(nameID: $nameID)
             }
                 .tabItem{
-                    Label("Patient Edit", systemImage: "gear.circle.fill")
+                    Label("Name Edit", systemImage: "gear.circle.fill")
                 }
                 .tag(1)
             

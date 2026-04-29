@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct PatientEdit: View {
+struct NameEdit: View {
     @EnvironmentObject var globalData: globalDataRec
-    @Binding var patientID: Int?
+    @Binding var nameID: Int?
     var body: some View {
-        Text("PatientEdit (ID: \(patientID ?? 0) )").onAppear {
+        Text("NametEdit (ID: \(nameID ?? 0) )").onAppear {
             globalData.recordEditFlag = true
         }
     }

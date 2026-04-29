@@ -9,13 +9,13 @@ import SwiftUI
 
 struct DetailTabView: View {
     @State private var selectedTab: Int = 0
-    @Binding var patientID: Int?
+    @Binding var nameID: Int?
    
     var body: some View {
         TabView(selection: $selectedTab)
         {
             NavigationStack {
-                PatientEdit(patientID: $patientID)
+                PatientEdit(patientID: $nameID)
             }
                 .tabItem{
                     Label("Patient Edit", systemImage: "gear.circle.fill")
@@ -23,7 +23,7 @@ struct DetailTabView: View {
                 .tag(1)
             
             NavigationStack {
-                SoapListView(patientID: $patientID)
+                SoapListView(nameID: $nameID)
             }
                 .tabItem{
                     Label("Soap", systemImage: "gear.circle.fill")
@@ -31,7 +31,7 @@ struct DetailTabView: View {
                 .tag(2)
             
             NavigationStack {
-                ExamListView(patientID: $patientID)
+                ExamListView(nameID: $nameID)
             }
                 .tabItem{
                     Label("Exam", systemImage: "gear.circle.fill")

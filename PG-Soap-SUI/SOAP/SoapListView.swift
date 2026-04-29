@@ -9,21 +9,21 @@ import SwiftUI
 
 struct SoapListView: View {
     @EnvironmentObject var globalData: globalDataRec
-    @Binding var patientID: Int?
+    @Binding var nameID: Int?
     @State var soapList: [SoapData] = []
     @State var selectedRec: Int?
     var body: some View {
-        Text("SoapListView \(patientID ?? 0)")
+        Text("SoapListView \(nameID ?? 0)")
         Text("Soap List Count: \(soapList.count)")
             .onAppear {
                 globalData.recordEditFlag = false
             }
-            .onChange(of: patientID) { newValue in
+            .onChange(of: nameID) {
                 Task{
                     
-                    if let ptID = newValue  {
+                    if let ptID = nameID  {
                         let spc = soapClass()
-                     await   soapList = spc.buildSoapist(patientID: ptID)
+                     await   soapList = spc.buildSoapist(nameID: ptID)
                     }
                 }
             }
@@ -32,13 +32,14 @@ struct SoapListView: View {
             TableColumn("ID") { soap in
                 Text(String(soap.id))
             }
-            .width(min: 25, ideal: 30, max: 100)
+            .width(min: 40, ideal: 50, max: 100)
             
             TableColumn("Date") { soap in
                 Text(getDateOptString(from: soap.soap_date))
             }
-                .width(min: 50, ideal: 50, max: 100)
-            TableColumn("Name", value: \.name) //         .width(min: 50, ideal: 50, max: 100)
+                .width(min: 50, ideal: 60, max: 100)
+            TableColumn("Name", value: \.name) //
+                .width(min: 60, ideal: 80, max: 150)
             // Use key path for simple String properties
             
         }

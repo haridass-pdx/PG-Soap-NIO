@@ -473,12 +473,12 @@ public class soapClass: pgClientClass{
                    pkField: "id")
     }
     
-    func buildSoapist(patientID:  Int) async -> [SoapData]{
+    func buildSoapist(nameID:  Int) async -> [SoapData]{
         var text: String = ""
         var result: [SoapData] = []
         
         
-            text = "SELECT * FROM public.soap_tbl  WHERE nameid = \(patientID)   ORDER BY soap_date ASC ;"
+            text = "SELECT * FROM public.soap_tbl  WHERE nameid = \(nameID)   ORDER BY soap_date ASC ;"
         
         await executeQuery(text: text)
         var theSoapRec = SoapData()

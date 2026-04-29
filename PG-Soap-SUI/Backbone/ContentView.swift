@@ -68,7 +68,7 @@ struct ContentView: View {
             }
         }
         detail: {
-            DetailTabView(patientID: $selectedPt)
+            DetailTabView(nameID: $selectedPt)
         }
     }
 }

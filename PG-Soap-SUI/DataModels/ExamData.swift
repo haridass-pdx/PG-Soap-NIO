@@ -388,8 +388,8 @@ struct  ExamData  : Identifiable, Equatable, Hashable {
         self.exsex = getString(key: "exsex")
         self.exhanded = getString(key: "exhanded")
         self.claim_num = getString(key: "claim_num")
-      //  self.rom_data = getString(key: "rom_data")
-      //  self.xray_data = getString(key: "xray_data")
+        self.rom_data = getData(key: "rom_data")
+        self.xray_data = getData(key: "xray_data")
         self.fri_score = getInt(key: "fri_score")
     }
     
@@ -509,8 +509,15 @@ struct  ExamData  : Identifiable, Equatable, Hashable {
         localDict["exsex"]?.strVal = String(self.exsex)
         localDict["exhanded"]?.strVal = String(self.exhanded)
         localDict["claim_num"]?.strVal = String(self.claim_num)
-    //    localDict["rom_data"]?.strVal = String(self.rom_data)
-   //     localDict["xray_data"]?.strVal = String(self.xray_data)
+        if let romData = self.rom_data {
+            localDict["rom_data"]?.strVal = String(data: romData, encoding: .utf8) ??  ""
+         
+        }
+        if let xrayData = self.xray_data {
+            localDict["xray_data"]?.strVal = String(data: xrayData, encoding: .utf8) ?? ""
+
+        }
+     
         localDict["fri_score"]?.strVal = String(self.fri_score)
        self.dataDict = localDict
 

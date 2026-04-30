@@ -115,7 +115,7 @@ class ColumnMetadataCache {
             var names: [String] = []
             var types: [UInt32] = []
             for try await (colName, typeOid) in rows.decode((String, Int).self) {
-                names.append(colName)
+                names.append(colName.trimmingCharacters(in: .controlCharacters).trimmingCharacters(in: .whitespaces))
                 types.append(UInt32(typeOid))
             }
             cache[name] = TableInfo(colNames: names, colTypes: types)
@@ -259,6 +259,15 @@ func cellToString(_ cell: PostgresCell) -> String {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             return formatter.string(from: date)
+        }
+        return ""
+    }
+    
+    // Bytea (binary data) - return as base64 string
+    if dt == .bytea {
+        var buf = cell.bytes!
+        if let bytes = buf.readBytes(length: buf.readableBytes) {
+            return Data(bytes).base64EncodedString()
         }
         return ""
     }
@@ -525,6 +534,12 @@ public class pgClientClass: ObservableObject {
             return "'\(val)'"
         case "text":
             return "'\(val)'"
+        case "bytea":
+            if let data = Data(base64Encoded: val) {
+                let hex = data.map { String(format: "%02x", $0) }.joined()
+                return "'\\x\(hex)'"
+            }
+            return "NULL"
         case "num":
             return "\(val)"
         case "time":

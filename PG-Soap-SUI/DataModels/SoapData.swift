@@ -301,9 +301,9 @@ struct  SoapData  : Identifiable, Equatable, Hashable {
         localDict["claim_num"]?.strVal = String(self.claim_num)
         localDict["dr_code"]?.strVal = String(self.dr_code)
         localDict["claim_id"]?.strVal = String(self.claim_id)
-        localDict["newSoapRec"]?.strVal = String(self.newSoapRec)
-  /*      localDict["jointData"]?.strVal = String(self.jointData)
-        localDict["mslData"]?.strVal = String(self.mslData)
+        localDict["newsoaprec"]?.strVal = String(self.newSoapRec)
+  /*      localDict["jointdata"]?.strVal = String(self.jointData)
+        localDict["msldata"]?.strVal = String(self.mslData)
         localDict["procedures"]?.strVal = String(self.procedures)
         localDict["exercises"]?.strVal = String(self.exercises)
         localDict["supplements"]?.strVal = String(self.supplements)
@@ -407,12 +407,12 @@ struct  SoapData  : Identifiable, Equatable, Hashable {
         self.claim_num = getString(key: "claim_num")
         self.dr_code = getString(key: "dr_code") 
         self.claim_id = getString(key: "claim_id") 
-        self.newSoapRec = getBool(key:   "newSoapRec")
-        self.jointData = getData(key: "jointData:")
-        self.mslData =  getData(key: "mslData:")
-        self.procedures =  getData(key: "procedures:")
-        self.exercises = getData(key: "exercises:")
-        self.supplements = getData(key: "supplements:")
+        self.newSoapRec = getBool(key:   "newsoaprec")
+        self.jointData = getData(key: "jointdata")
+        self.mslData =  getData(key: "msldata")
+        self.procedures =  getData(key: "procedures")
+        self.exercises = getData(key: "exercises")
+        self.supplements = getData(key: "supplements")
 
        // self.dataDict = dataDict["dataDict:") 
     }
@@ -446,12 +446,9 @@ struct  SoapData  : Identifiable, Equatable, Hashable {
         return Result
     }
     
-    func getData(key:   String)-> Data?{
-        var Result : Data? = nil
-        let str = dataDict[key]?.strVal ?? ""
-        
-        Result = Data(str.utf8)
-        return Result
+    func getData(key: String) -> Data? {
+        guard let str = dataDict[key]?.strVal, !str.isEmpty else { return nil }
+        return Data(base64Encoded: str)
     }
     
     func getDate(key:    String)->Date?{

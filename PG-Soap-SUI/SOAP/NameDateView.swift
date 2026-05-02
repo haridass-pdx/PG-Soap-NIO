@@ -18,12 +18,13 @@ struct NameDateView: View {
                 
                 TextField("Name" , text: $soapRec.name)
                 //, format: .dateTime.hour().minute().second())
+                Toggle( "newSoap", isOn: $soapRec.newSoapRec )
+
                 
             }.textFieldStyle(.roundedBorder)
-            Toggle( "newSoap", isOn: $soapRec.newSoapRec )
+                        
             
-            
-        }.frame(width: 300)
+        }.frame(width: 500)
     }
 }
 

@@ -213,13 +213,10 @@ struct  PatientData  : Identifiable, Equatable, Hashable {
     }
     
     func getBool(key:   String)-> Bool{
-        var Result : Bool = false
         let str = dataDict[key]?.strVal ?? ""
-        
-        Result = Bool(str) ?? false
-        return Result
+        return str == "t" || str == "true" || str == "1"
     }
-    
+
     func getData(key:   String)-> Data?{
         var Result : Data? = nil
         let str = dataDict[key]?.strVal ?? ""

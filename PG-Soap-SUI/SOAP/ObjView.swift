@@ -6,14 +6,15 @@
 //
 
 import SwiftUI
-/*
+
 struct ObjView: View {
-    var SoapRec: soap_tbl
+    //var SoapRec: soap_tbl
+    @Binding var soapRec: SoapData
     var body: some View {
         Text("Objective!")
     }
 }
-*/
+
 /*#Preview {
     ObjView()
 }*/

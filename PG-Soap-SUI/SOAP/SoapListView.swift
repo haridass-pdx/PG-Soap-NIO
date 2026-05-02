@@ -12,6 +12,9 @@ struct SoapListView: View {
     @Binding var nameID: Int?
     @State var soapList: [SoapData] = []
     @State var selectedRec: Int?
+    @State var soapRec: SoapData = SoapData()
+    @State var navigateToEditPay: Bool = false
+    
     var body: some View {
         Text("SoapListView \(nameID ?? 0)")
         Text("Soap List Count: \(soapList.count)")
@@ -33,7 +36,11 @@ struct SoapListView: View {
                 Text(String(soap.id))
             }
             .width(min: 40, ideal: 50, max: 100)
-            
+            TableColumn("New") { soap in
+                Text(getDateString(item: soap))
+            }
+            .width(min: 40, ideal: 50, max: 100)
+
             TableColumn("Date") { soap in
                 Text(getDateOptString(from: soap.soap_date))
             }
@@ -43,7 +50,27 @@ struct SoapListView: View {
             // Use key path for simple String properties
             
         }
+        .onChange(of: selectedRec) {
+            if let id = selectedRec {
+                if let sr  =  soapList.first(where: { $0.id == id }){
+                    soapRec = sr
+                    navigateToEditPay = true
+                }
+            }
+        }
+        .navigationDestination(isPresented: $navigateToEditPay) {
+            
+            SoapTabsView(soapRec: $soapRec)
+            }
+
         
+    }
+    
+    func getDateString(item: SoapData) -> String {
+        let result =  "\(item.newSoapRec)"
+        print(result)
+        print(item.soap_date)
+        return result
     }
     
 }

@@ -47,7 +47,8 @@ struct ContentView: View {
                     
                 }
                 .disabled(globalData.recordEditFlag)
-                .onChange(of: selectedPt) {
+                .onChange(of: selectedPt) { oldVal, newValue in
+                    
                 }
             }
             .navigationTitle("Name List")

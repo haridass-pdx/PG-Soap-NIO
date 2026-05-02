@@ -439,11 +439,8 @@ struct  SoapData  : Identifiable, Equatable, Hashable {
 
     
     func getBool(key:   String)-> Bool{
-        var Result : Bool = false
         let str = dataDict[key]?.strVal ?? ""
-        
-        Result = Bool(str) ?? false
-        return Result
+        return str == "t" || str == "true" || str == "1"
     }
     
     func getData(key: String) -> Data? {
@@ -488,5 +485,13 @@ public class soapClass: pgClientClass{
         return result
     }
     
-
+    func snipper(){
+    /*    if let data = getData(key: "jointdata") {
+            let unarchiver = try NSKeyedUnarchiver(forReadingFrom: data)
+            unarchiver.requiresSecureCoding = false
+            if let array = unarchiver.decodeObject(forKey: "SpinalFindings") as? [Any] {
+                // use the array
+            }
+        } */
+    }
 }

@@ -6,14 +6,25 @@
 //
 
 import SwiftUI
-/*
+
 struct SubjView: View {
-    var SoapRec: soap_tbl
+   // var SoapRec: soap_tbl
+    @Binding var soapRec: SoapData
     var body: some View {
-        Text("Subj!")
+        
+        VStack {
+            Form {
+                NameDateView(soapRec: $soapRec)
+                
+                
+            }
+            
+        }
+        
+            
     }
 }
-*/
+
 //#Preview {
 //    SubjView()
 //}

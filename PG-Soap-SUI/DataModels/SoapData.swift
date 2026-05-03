@@ -485,7 +485,7 @@ public class soapClass: pgClientClass{
         return result
     }
     
-    func snipper(){
+    func snippet(){
     /*    if let data = getData(key: "jointdata") {
             let unarchiver = try NSKeyedUnarchiver(forReadingFrom: data)
             unarchiver.requiresSecureCoding = false

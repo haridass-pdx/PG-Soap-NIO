@@ -555,3 +555,26 @@ func pgDateFormatter()->DateFormatter{
     return formatter1
 }
 
+func unarchiveData(_ data: Data, forKey key: String) -> [Any]? {
+    guard !data.isEmpty else { return nil }
+    do {
+        let unarchiver = try NSKeyedUnarchiver(forReadingFrom: data)
+        unarchiver.requiresSecureCoding = false
+        let result = unarchiver.decodeObject(forKey: key) as? [Any]
+        unarchiver.finishDecoding()
+        return result
+    } catch {
+        print("Unarchive error: \(error)")
+        return nil
+    }
+}
+
+func getDataArray(_ data: Data?, key: String) -> [Any]? {
+    var result: [Any]?
+    if let ldata = data {
+       result = unarchiveData(ldata, forKey: key)
+    }
+    return result
+}
+
+

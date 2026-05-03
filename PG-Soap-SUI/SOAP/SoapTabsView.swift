@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SoapTabsView: View {
-    @State private var selectedTab: Int = 0
-    @Binding var soapRec: SoapData
+    @State  var selectedTab: Int = 0
+    @Binding var soapRec: SoapData 
     var body: some View {
         VStack {
             NameDateView(soapRec: $soapRec)

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let fwidth = 450.0
+let fwidth = 600.0
 
 struct SubjView: View {
    // var SoapRec: soap_tbl

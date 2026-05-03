@@ -40,7 +40,7 @@ struct SoapTabsView: View {
                 
             }
         }
-       .frame(width: 600)
+       .frame(width: 700)
   }
 }
 

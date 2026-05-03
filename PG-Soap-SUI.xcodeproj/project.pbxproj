@@ -430,6 +430,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
 				MARKETING_VERSION = 0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.KPRC.PG-Soap-SUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -462,6 +463,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Libraries",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
 				MARKETING_VERSION = 0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.KPRC.PG-Soap-SUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
